@@ -1,0 +1,18 @@
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setmode (GPIO.BOARD)
+GPIO.setup (12,GPIO.IN)
+while 1:
+	try:
+		if GPIO.input(12)==True:
+			print “IR sensing”
+		else:
+			print “Not sensing”      
+	except KeyboardInterrupt:
+
+		GPIO.cleanup()
+
+
+
+
+
