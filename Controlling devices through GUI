@@ -1,0 +1,19 @@
+
+import RPi.GPIO as GPIO
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+from Tkinter import *
+def ledon():
+        GPIO.output(7,True)
+def ledoff():
+        GPIO.output(7,False)
+root =Tk()
+button1 = Button(root,fg= ‘GREEN',text="ON",command=ledon)
+button2 = Button(root,fg= ‘RED',text="OFF",command=ledoff)
+button3= Button(root,fg= ‘BLUE',text=“Tenet“)
+button1.pack (side = LEFT )
+button2.pack (side = RIGHT)
+button3.pack (side = TOP)
+root.mainloop()
+
