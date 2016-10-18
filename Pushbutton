@@ -1,0 +1,14 @@
+Code:
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setmode (GPIO.BOARD)
+GPIO.setup(12,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+while 1:
+	try:
+		if GPIO.input(12)==True:
+			print “1”
+		else:
+			print “0”      
+	except KeyboardInterrupt:
+
+		GPIO.cleanup()
